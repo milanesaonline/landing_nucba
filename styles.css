@@ -12,16 +12,23 @@
 :root{
     /* colors */
     --primarycolor: #438fe0;
-    --secondarycolor: #98ffcb ;
+    --secondarycolor: #98ffcb;
+    --accentcolor: #a143a1;
     --background: #fffbf0;
     --textwhite: #fbe5d2;
     --textdark: #048387;
 
     /* fonts */
-    --titlefont: 'Londrina Solid', Arial, sans-serif;
+    --titlefont: 'Balsamiq Sans', Arial, sans-serif;
     --subtitlefont: 'Balsamiq Sans', Arial, sans-serif;
-    --bodyfont: 'Balsamiq Sans', Arial, sans-serif;
-    
+    --bodyfont: 'Londrina Solid', Arial, sans-serif;
+
+    --titlefontsize: 2rem;
+    --subtitlefontsize: 1.5rem;
+    --bodyfontsize: 1rem;
+
+    --bodyfont-weight-regular: 300;
+    --bodyfont-weight-bold: 700;
 
     /* random */
 
@@ -29,11 +36,10 @@
 
 /* HEADER */
 
-
 body{
     background-color: var(--background);
     color: var(--textdark);
-
+    width: 100%;
 }
 
 a{
@@ -51,8 +57,11 @@ header {
     align-items: center;
     background-color: var(--primarycolor);
     color: var(--textwhite);
-    padding: 20px 50px;
-    /* max-width: 90%; */
+    padding: 15px 50px;
+    position: fixed;
+    width: 100%;
+    height: 11vh;
+    z-index: 1000;  
 
     .navbar {
         gap: 40px;  
@@ -69,15 +78,49 @@ header {
     }
 
     .logo {
-        width: 7%;
+        height: 100%;
+        width: auto;
         /* background-color: pink; */
     }
 
 }
 
-/* .ReservaAhora{ 
+#ReservaAhora{ 
     width: 150px;
-} */
+}
+
+/* textos */
+h1 {
+    font-family: var(--titlefont);
+    font-size: var(--titlefontsize);
+    color: var(--accentcolor);
+}
+
+h2{
+    font-family: var(--subtitlefont);
+    font-size: var(--subtitlefontsize);
+    color: var(--accentcolor);
+    margin: 15px 10px 15px 0px;
+}
+
+h3{
+    font-family: var(--subtitlefont);
+    font-size: var(--bodyfontsize);
+    color: var(--accentcolor);
+    margin: 10px 5px 10px 0px;
+
+}
+
+p{
+    font-family: var(--bodyfont);
+    font-size: var(--bodyfontsize);
+    font-weight: var(--bodyfont-weight-regular);
+}
+
+strong{
+    font-family: var(--bodyfont);
+    font-weight: var(--bodyfont-weight-bold);
+}
     
 
 main{
@@ -87,36 +130,140 @@ main{
     justify-content: center;
     /* max-width: 90%; */
     /* background-color: hotpink; */
-    gap: 90px;
+    align-self: center;
+    gap: 30px;
+}
+
+/* hero */
+#hero {
+    background-color: var(--secondarycolor);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;   
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+}
+
+#contenedorhero{
+    /* background-color: crimson; */
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    align-self: center;
+    width: 75%;
+}
+
+#textoshero{
+    /* background-color: lime; */
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 25px;
+    gap: 10px;
+    width: 100%;
+    justify-self: center;
     align-self: center;
 }
 
-section{
-    /* background-color: blueviolet; */
-    max-width: 90%;
+#imghero{
+    /* background-color: blue; */
+    width: 100%;
+        img{
+        width: 95%;
+        height: 95%;
+        border-radius: 16px;
+        }
+}
+
+#btnhero {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    flex-direction: column;
-    /* border: 2px solid var(--textwhite);
-    border-radius: 16px; */
+    gap: 10px;
+
+        button{
+        font-family: var(--subtitlefont);
+        font-size: var(--bodyfontsize);
+        padding: 10px;
+        border-radius: 16px;
+        border: solid 2px var(--textdark);
+        width: 10vw;
+        height: auto;
+        }
+
+            #btn1{
+                background-color: var(--primarycolor);
+            }
+}
+
+/* sections */
+section{
+    /* background-color: lightslategray; */
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     padding: 30px;
-    height: 95vh;
+    /* height: 60vh; */
+    height: min-content;
+    width: 75%;
+    gap: 20px;
+
+     div{
+        width: 80%;
+        align-self: flex-start;
+     }
+
+     /* img{
+        width: 20%;
+        height: 100%;
+        align-self: flex-end;
+        justify-self: center;
+     } */
     
 }
 
-#hero {
-    /* background-color: aquamarine; */
+/* #imgsection{
     display: flex;
+    flex-direction: row;
     align-items: center;
-    flex-direction: column;
-    padding: 70px;
+    justify-content: center;
+    align-self: center;
+    background-color: pink;
+    height: 40%;
+    max-width: 100%;
+    gap: 30px;
+
+        img{
+            width: 25%;
+            height: auto;
+            border-radius: 16px;  
+        }
+
+} */
+
+#servicios{
+    /* background-color: rgb(126, 42, 42); */    
 }
 
-h1 h2 {
-    font-family: var(--titlefont);
-    font-size: var(--titlefont);
+#comollegar{
+    /* background-color: rgb(52, 114, 165); */
 }
 
+#reglasconvivencia{
+    /* background-color: darkkhaki; */
+}
+
+
+
+
+
+/* footer */
 footer {
     display: flex;
     justify-content: center;
@@ -124,5 +271,5 @@ footer {
     background-color: var(--primarycolor);
     color: var(--textwhite);
     height: 10vh;
-
+    margin-top: 20px;
 }
