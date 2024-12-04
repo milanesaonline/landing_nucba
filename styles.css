@@ -23,9 +23,9 @@
     --subtitlefont: 'Balsamiq Sans', Arial, sans-serif;
     --bodyfont: 'Londrina Solid', Arial, sans-serif;
 
-    --titlefontsize: 2rem;
-    --subtitlefontsize: 1.5rem;
-    --bodyfontsize: 1rem;
+    --titlefontsize: 2.3rem;
+    --subtitlefontsize: 2rem;
+    --bodyfontsize: 1.3rem;
 
     --bodyfont-weight-regular: 300;
     --bodyfont-weight-bold: 700;
@@ -55,8 +55,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primarycolor);
-    color: var(--textwhite);
+    background-color: var(--accentcolor);
+    color: var(--background);
     padding: 15px 50px;
     position: fixed;
     width: 100%;
@@ -87,6 +87,11 @@ header {
 
 #ReservaAhora{ 
     width: 150px;
+}
+
+html{
+    scroll-padding: 85px;
+    scroll-behavior: smooth;
 }
 
 /* textos */
@@ -136,14 +141,14 @@ main{
 
 /* hero */
 #hero {
-    background-color: var(--secondarycolor);
+    background-color: var(--background);
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: center;   
     padding: 20px;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
 }
 
 #contenedorhero{
@@ -190,13 +195,14 @@ main{
         font-size: var(--bodyfontsize);
         padding: 10px;
         border-radius: 16px;
-        border: solid 2px var(--textdark);
+        border: solid 2px var(--accentcolor);
         width: 10vw;
         height: auto;
         }
 
             #btn1{
-                background-color: var(--primarycolor);
+                background-color: var(--accentcolor);
+                color: var(--background);
             }
 }
 
@@ -211,53 +217,93 @@ section{
     padding: 30px;
     /* height: 60vh; */
     height: min-content;
-    width: 75%;
+    width: 80%;
     gap: 20px;
 
      div{
         width: 80%;
         align-self: flex-start;
-     }
-
-     /* img{
-        width: 20%;
-        height: 100%;
-        align-self: flex-end;
-        justify-self: center;
-     } */
-    
+     }    
 }
 
-/* #imgsection{
+#info{
+    width: 50%;
+    text-align: center;
+    background-color: var(--accentcolor);
+    color: var(--background);
+    padding: 40px;
+    border-radius: 16px;
+}
+
+#servicios{   
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#cardsservicios{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    background-color: pink;
-    height: 40%;
-    max-width: 100%;
     gap: 30px;
-
-        img{
-            width: 25%;
-            height: auto;
-            border-radius: 16px;  
-        }
-
-} */
-
-#servicios{
-    /* background-color: rgb(126, 42, 42); */    
+    align-items: center;
+    align-self: center;
 }
 
 #comollegar{
-    /* background-color: rgb(52, 114, 165); */
+    background-color: var(--background);
+}
+
+#mapaorden{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    display: flex;
+    gap: 30px;
+    justify-self: flex-start;
+    margin-top: 3vh;
+    width: 100%;
+        span{
+            background-color: var(--accentcolor);
+            color: var(--background);
+            font-family: var(--subtitlefont);
+        }
 }
 
 #reglasconvivencia{
-    /* background-color: darkkhaki; */
+    background-color: var(--background);    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
+
+.cards {
+    width: 30%;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--primarycolor);
+    color: var(--textwhite);
+    display: flex;
+    flex-direction: column;
+        h3{
+            color: var(--textwhite);
+        }
+}
+
+button{
+    background-color: var(--background);
+    color: var(--accentcolor);
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: var(--subtitlefont);
+    margin-top: 10px;
+    justify-self: flex-start;
+    align-self: flex-end;
+}
+
+
 
 
 
@@ -271,5 +317,31 @@ footer {
     background-color: var(--primarycolor);
     color: var(--textwhite);
     height: 10vh;
-    margin-top: 20px;
+    padding: 7vh;
 }
+
+/* wavy coso */
+.wave-container {  
+    height: 20vh;
+    background-color: #fffbf0;
+    position: relative;
+  }
+  
+  .wave-container::before {   
+    content: "";
+    width: 100%;
+    height: 56px;
+    position: absolute;
+    bottom: -0.3%;
+    left: 0;
+    background-size: auto;
+    background-repeat: repeat no-repeat;
+    background-position: 30vw bottom;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200  80' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 59L50 55C100 51 200 44 300 30C400 15 500 -6 600 1C700 8 800 44 900 59C1000 73 1100 66 1150 62L1200 59V80H1150C1100 80 1000 80 900 80C800 80 700 80 600 80C500 80 400 80 300 80C200 80 100 80 50 80H0V59Z' fill='%23438fe0'/></svg>");
+  }
+  
+  @media(max-width:850px) {
+    .wave-container::before {    
+      height: 28px
+    }  
+  }
